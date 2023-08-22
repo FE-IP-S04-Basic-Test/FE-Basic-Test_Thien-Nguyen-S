@@ -28,8 +28,6 @@ body {
 
 .chip.checked::after {
   content: '\2713';
-  width: 20px;
-  height: 20px;
 }
 
 .chip-primary {
