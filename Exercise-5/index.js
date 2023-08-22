@@ -20,25 +20,7 @@ handleAddtoCart(productData[0], iceData[2], sugarData[1], 1);
 handleAddtoCart(productData[0], iceData[1], sugarData[1], 2);
 handleAddtoCart(productData[1], iceData[2], sugarData[2], 1);
 
-// Cau 2
-const twoArrayOfProduct = (arrA, arrB) => {
-  let result = [];
-  for (const a of arrA) {
-    for (const b of arrB) {
-      if (b.id === a.id) {
-        const check = result.find((i) => i.id === a.id);
-        const id = a.id;
-        const quantity = a.quantity + b.quantity;
-        if (!check) {
-          result.push({ id, quantity });
-        } else {
-          check.quantity += quantity;
-        }
-      }
-    }
-  }
-  return result;
-};
+// Cau 2s
 
 const twoArray = (arrA, arrB) => {
   const quantitiesArr1 = {};
@@ -54,8 +36,6 @@ const twoArray = (arrA, arrB) => {
     quantitiesArr1[id] += quantity;
   }
 
-  console.log(quantitiesArr1);
-
   for (const value of arrB) {
     const id = value.id;
     const quantity = value.quantity;
@@ -65,8 +45,6 @@ const twoArray = (arrA, arrB) => {
     quantitiesArr2[id] += quantity;
   }
 
-  console.log(quantitiesArr2);
-
   for (const key in quantitiesArr2) {
     if (quantitiesArr1[key]) {
       result.push({ id: key, quantity: quantitiesArr1[key] + quantitiesArr2[key] });
@@ -75,7 +53,7 @@ const twoArray = (arrA, arrB) => {
     }
   }
 
-  console.log(result);
+  return result;
 };
 
 const arrA = [
@@ -90,6 +68,6 @@ const arrB = [
   { id: '3', quantity: 2 }
 ];
 
-twoArray(arrA, arrB);
+console.log(twoArray(arrA, arrB));
 
 // console.log(twoArrayOfProduct(arrA, arrB));
