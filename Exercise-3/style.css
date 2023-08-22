@@ -11,6 +11,7 @@ body {
 }
 
 .chip {
+  position: relative;
   padding: 8px 16px;
   border-radius: 16px;
   font-size: 13px;
@@ -23,6 +24,12 @@ body {
   line-height: 16px;
   width: fit-content;
   height: fit-content;
+}
+
+.chip.checked::after {
+  content: '\2713';
+  width: 20px;
+  height: 20px;
 }
 
 .chip-primary {
