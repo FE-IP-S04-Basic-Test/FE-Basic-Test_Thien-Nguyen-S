@@ -29,27 +29,25 @@ const twoArray = (arrA, arrB) => {
 
   for (const value of arrA) {
     const id = value.id;
-    const quantity = value.quantity;
+    const quantity = { quantity: value.quantity };
     if (!quantitiesArr1[id]) {
       quantitiesArr1[id] = 0;
     }
-    quantitiesArr1[id] += quantity;
+    quantitiesArr1[id] += quantity.quantity;
   }
 
   for (const value of arrB) {
     const id = value.id;
-    const quantity = value.quantity;
+    const quantity = { quantity: value.quantity };
     if (!quantitiesArr2[id]) {
       quantitiesArr2[id] = 0;
     }
-    quantitiesArr2[id] += quantity;
+    quantitiesArr2[id] += quantity.quantity;
   }
 
   for (const key in quantitiesArr2) {
     if (quantitiesArr1[key]) {
       result.push({ id: key, quantity: quantitiesArr1[key] + quantitiesArr2[key] });
-    } else {
-      result.push({ id: key, quantity: 0 + quantitiesArr2[key] });
     }
   }
 
@@ -59,7 +57,7 @@ const twoArray = (arrA, arrB) => {
 const arrA = [
   { id: '1', quantity: 2 },
   { id: '2', quantity: 2 },
-  { id: '3', quantity: 0 },
+  { id: '3', quantity: 2 },
   { id: '1', quantity: 3 }
 ];
 
