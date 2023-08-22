@@ -1,25 +1,31 @@
-.wrapper {
-  margin-top: 100px;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
 .tooltip {
   margin-top: 20px;
-  display: inline-block;
   position: relative;
 }
 
 .tooltip-text {
   position: absolute;
-  top: -200%;
-  left: 50%;
+  top: -30px;
+  left: 0;
   opacity: 0;
   background-color: black;
   padding: 5px 10px;
   color: white;
-  transform: translateX(-50%);
+  width: fit-content;
+}
+
+.tooltip-right .tooltip-text {
+  top: 0;
+  right: 100px;
+}
+.tooltip-bottom .tooltip-text {
+  top: 0;
+  bottom: 100px;
+  right: 0;
+}
+.tooltip-left .tooltip-text {
+  top: 0;
+  left: 100px;
 }
 
 .tooltip:hover .tooltip-text {
