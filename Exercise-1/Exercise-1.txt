@@ -1,0 +1,7 @@
+Trong HTML chúng ta inject CSS và JS files ở : 
+
+CSS : Chúng ta inject file ở trong thẻ head của html file
+Lý do : Chúng ta đặt CSS ở đầu để khi load trang thì CSS đã load trước khi load HTML, vì vậy khi load HTML thì nó đã ăn CSS
+
+JS : Chúng ta inject JS file ở tại cuối cùng của thẻ body
+Lý do : Chúng ta đặt JS file ở cuối bởi vì JS làm việc trực tiếp với DOM, vì vậy DOM phải đã được load trước khi JS thực thi, cho nên chúng ta đặt ở cuối thẻ body để đảm bảo HTML DOM đã được load

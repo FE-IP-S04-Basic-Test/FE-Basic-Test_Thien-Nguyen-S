@@ -1,0 +1,27 @@
+.wrapper {
+  margin-top: 100px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tooltip {
+  margin-top: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip-text {
+  position: absolute;
+  top: -200%;
+  left: 50%;
+  opacity: 0;
+  background-color: black;
+  padding: 5px 10px;
+  color: white;
+  transform: translateX(-50%);
+}
+
+.tooltip:hover .tooltip-text {
+  opacity: 1;
+}
